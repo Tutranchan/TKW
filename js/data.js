@@ -73,7 +73,7 @@ if (loginForm) {
                 console.log("✅ Đã lưu userData:", userData);
                 
                 alert("Đăng nhập thành công!");
-                window.location.href = "../main.html";
+                window.location.href = "index.html";
             })
             .catch(err => {
                 alert("Sai email hoặc mật khẩu!");
