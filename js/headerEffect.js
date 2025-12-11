@@ -27,9 +27,9 @@ function handleLogout(event) {
     const currentPath = window.location.pathname;
     
     if (currentPath.includes('/login/') || currentPath.includes('/user/')) {
-        window.location.href = "main.html";
+        window.location.href = "index.html";
     } else {
-        window.location.href = "main.html";
+        window.location.href = "index.html";
     }
 }
 
