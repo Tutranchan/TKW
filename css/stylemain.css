@@ -29,7 +29,22 @@
     /* Lệnh này sẽ làm ảnh lấp đầy toàn bộ vùng chứa và tự động cắt bớt nếu cần */
     object-fit: cover; 
 }
-
+/* CSS cho Loading Spinner */
+#loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1E0060;
+    z-index: 9999;
+    
+    /* Thiết lập hiệu ứng chuyển đổi cho opacity và visibility */
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out; 
+}
 
 /* Hiệu ứng Phát sáng (Glow) mặc định */
 .download-button {
