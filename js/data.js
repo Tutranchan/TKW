@@ -135,7 +135,7 @@ if (googleBtn) {
                 console.log("✅ Google Login - Đã lưu userData:", userData);
                 
                 alert("Đăng nhập Google thành công!");
-                window.location.href = "../main.html";
+                window.location.href = "index.html";
             })
             .catch((error) => {
                 console.error(error);
