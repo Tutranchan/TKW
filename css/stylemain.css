@@ -1,0 +1,129 @@
+.header-frame {
+    width: 100%;
+    height: 90px; /* tùy vào chiều cao header */
+    border: none;
+    marin: 0;
+
+}
+/* CSS cho Loading Spinner */
+#loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1E0060;
+    z-index: 9999;
+    
+    /* Thiết lập hiệu ứng chuyển đổi cho opacity và visibility */
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out; 
+}
+
+/* Class kích hoạt hiệu ứng mờ dần */
+.fade-out {
+    opacity: 0;
+    visibility: hidden; /* Ẩn khỏi màn hình và screen readers */
+}
+
+/* Class để ẩn hoàn toàn (sau khi hiệu ứng fade-out đã hoàn tất) */
+.hidden {
+    display: none !important;
+}
+.main-hero-image {
+    /* Đảm bảo ảnh không bao giờ lớn hơn chiều rộng của vùng chứa */
+    max-width: 100%; 
+    /* Đảm bảo ảnh tự động điều chỉnh chiều cao để giữ tỷ lệ (tránh bị méo) */
+    height: auto; 
+    display: block; /* Giúp quản lý khoảng trắng tốt hơn */
+}
+.main-image-container {
+    width: 100%;
+    height: 1000; /* Đặt chiều cao cố định bạn muốn */
+    overflow: hidden; /* Quan trọng: Ẩn phần bị cắt */
+}
+
+.main-hero-image {
+    width: 100%;
+    height: 100%;
+    /* Lệnh này sẽ làm ảnh lấp đầy toàn bộ vùng chứa và tự động cắt bớt nếu cần */
+    object-fit: cover; 
+}
+
+
+/* Hiệu ứng Phát sáng (Glow) mặc định */
+.download-button {
+    /* Quan trọng: Phải có để định vị được */
+    position: absolute; 
+    
+    /* Đảm bảo nút được hiển thị */
+    display: flex; 
+    
+    /* Đảm bảo nút nằm trên ảnh nền (ảnh nền thường có z-index thấp hơn) */
+    z-index: 10; 
+    
+    /* Các thuộc tính định vị khác */
+    top: 100%;
+    left: 90%;
+    transform: translate(0%, -50%);
+    border-radius: 100%;
+}
+
+/* Hiệu ứng nhấn (khi người dùng click và giữ chuột) */
+.download-button:active {
+    transform: translate(-50%, -50%) scale(0.95); /* Làm nút co lại 5% */
+    box-shadow: 0 0 5px rgba(255, 87, 51, 0.5); /* Giảm độ sáng khi nhấn */
+}
+
+/* Định kiểu Icon */
+.download-icon {
+    width: 400px;
+    height: 400px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg); /* Bắt đầu xoay từ 0 độ */
+    }
+    to {
+        transform: rotate(360deg); /* Kết thúc xoay ở 360 độ */
+    }
+}
+
+download-icon {
+    width: 30px; /* Điều chỉnh kích thước icon */
+    height: 30px;
+    
+}
+
+
+/* Đảm bảo keyframes này đã được định nghĩa nếu bạn chưa làm trước đó */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+rotating-glow-image {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    background-color: transparent;
+    /* Đảm bảo ảnh nằm trên ảnh nền (nếu cần định vị tuyệt đối) */
+    position: absolute; 
+    top: 30%; /* Điều chỉnh vị trí */
+    left: 30%; /* Điều chỉnh vị trí */
+    z-index: 10; 
+    
+    animation: spin 8s linear infinite; 
+    /* xoay 8 giây / vòng, tốc độ đều, lặp vô tận */
+    opacity: 70%;
+    /* 2. HIỆU ỨNG PHÁT SÁNG (GLOW) */
+    /* Sử dụng filter: drop-shadow cho hiệu ứng phát sáng mờ ảo quanh hình dạng ảnh */
+    filter: drop-shadow(0 0 10px #cfffff) /* Màu Cyan/Aqua Glow */
+            drop-shadow(0 0 20px #dedfff); /* Tăng cường độ sáng */
+    
+    /* Hoặc dùng box-shadow nếu ảnh có nền vuông/tròn */
+    /* box-shadow: 0 0 15px rgba(0, 255, 255, 0.9); */
+}
